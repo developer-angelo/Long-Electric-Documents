@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+*::selection {
+    background-color: goldenrod;
+    color: white;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #333;
+    color: white
+}
+
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px;
+    width: 100%;
+    background-color: #444;
+    z-index: 999;
+}
+
+.logo {
+    width: 10%;
+    user-select: none;
+    cursor: pointer;
+}
+
+main {
+    padding: 25px;
+    border-radius: 30px;
+    background-color: #444;
+    display: block;
+    width: 80%;
+    margin: 30px auto;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.entry {
+    width: 40%;
+    border-radius: 20px;
+}
+
+.content {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #555;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.divisor {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.title-project {
+    color: lightsalmon;
+    transition: all .6s ease-in-out;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.second {
+    margin-top: 20px;
+}
+
+p, div, section, .second {
+    animation: entrada 1s linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+}
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateX(100px) scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.progress {
+    width: 100%;
+    background-color: goldenrod;
+    height: 3px;
+    border-radius: 30px;
+    position: fixed;
+    bottom: 0;
+    animation: desplazar 1s linear both;
+    animation-timeline: scroll();
+}
+
+@keyframes desplazar {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) 
+{
+
+    main {
+        width: 100%;
+    }
+
+}
